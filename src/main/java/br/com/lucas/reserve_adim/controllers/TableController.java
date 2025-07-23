@@ -1,7 +1,7 @@
 package br.com.lucas.reserve_adim.controllers;
 
 import br.com.lucas.reserve_adim.domain.table.CreateTableDTO;
-import br.com.lucas.reserve_adim.domain.table.Table;
+import br.com.lucas.reserve_adim.domain.table.TableEntity;
 import br.com.lucas.reserve_adim.domain.table.TableStatus;
 import br.com.lucas.reserve_adim.repositories.TableRepository;
 import jakarta.validation.Valid;
@@ -25,9 +25,9 @@ public class TableController {
         }
         System.out.println(data);
 
-        Table newTable = new Table(data.name(), data.capacity(), TableStatus.AVAILABLE);
-        System.out.println(newTable.getCapacity());
-        this.repository.save(newTable);
+        TableEntity newTableEntity = new TableEntity(data.name(), data.capacity(), TableStatus.AVAILABLE);
+        System.out.println(newTableEntity.getCapacity());
+        this.repository.save(newTableEntity);
 
         return ResponseEntity.ok().build();
     }

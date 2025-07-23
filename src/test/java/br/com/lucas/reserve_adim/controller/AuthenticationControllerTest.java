@@ -38,7 +38,7 @@ public class AuthenticationControllerTest {
 
         AuthenticationDTO data = new AuthenticationDTO("user", "pass");
         UsernamePasswordAuthenticationToken token =
-                new UsernamePasswordAuthenticationToken(data.login(), data.password());
+                new UsernamePasswordAuthenticationToken(data.email(), data.password());
 
         AppUser appUser = new AppUser("user", "user", "pass", UserRole.USER);
         Authentication authentication = mock(Authentication.class);
@@ -60,7 +60,7 @@ public class AuthenticationControllerTest {
     void testRegisterSuccess() {
         // Arrange
         RegisterDTO data = new RegisterDTO("newuser", "New User", "pass123", UserRole.USER);
-        when(repository.findByLogin("newuser")).thenReturn(null);
+        when(repository.findByEmail("newuser")).thenReturn(null);
 
         // Act
         ResponseEntity response = authenticationController.register(data);
@@ -74,7 +74,7 @@ public class AuthenticationControllerTest {
     void testRegisterUserAlreadyExists() {
         // Arrange
         RegisterDTO data = new RegisterDTO("existing", "Existing", "pass123", UserRole.USER);
-        when(repository.findByLogin("existing")).thenReturn(new AppUser());
+        when(repository.findByEmail("existing")).thenReturn(new AppUser());
 
         // Act
         ResponseEntity response = authenticationController.register(data);

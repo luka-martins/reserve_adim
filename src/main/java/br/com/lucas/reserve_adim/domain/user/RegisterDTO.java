@@ -7,7 +7,7 @@ public record RegisterDTO(
 
         @NotNull
         @NotEmpty
-        String login,
+        String email,
 
         @NotNull
         @NotEmpty

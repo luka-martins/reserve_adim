@@ -1,4 +1,4 @@
 package br.com.lucas.reserve_adim.domain.user;
 
-public record AuthenticationDTO(String login, String password) {
+public record AuthenticationDTO(String email, String password) {
 }

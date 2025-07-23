@@ -1,5 +1,6 @@
 package br.com.lucas.reserve_adim.domain.user;
 
+import br.com.lucas.reserve_adim.domain.reservation.Reservation;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -23,15 +24,20 @@ public class AppUser implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String login;
+    private String email;
     private String name;
     private String password;
 
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    public AppUser(String login,String name, String password, UserRole role){
-        this.login = login;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Reservation> reservations;
+
+
+
+    public AppUser(String email, String name, String password, UserRole role){
+        this.email = email;
         this.password = password;
         this.name = name;
         this.role = role;
@@ -51,7 +57,7 @@ public class AppUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return login;
+        return email;
     }
 
 }
