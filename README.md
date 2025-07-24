@@ -5,7 +5,7 @@
 ![Oracle](https://img.shields.io/badge/oracle-%23F80000.svg?style=for-the-badge&logo=oracle&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
-This project is an API built using **Java, Java Spring, Flyway Migrations, Oracle as the database, and Spring Security and JWT for authentication control.**
+This project is an API built using **Java, Java Spring, Oracle as the database, and Spring Security and JWT for authentication control.**
 
 This API was developed as a solution to a technical challenge found online. Its main goal is to manage restaurant table reservations efficiently and in an organized manner. [Link to challenge](https://racoelho.com.br/listas/desafios/sistema-de-reservas-de-restaurante)
 

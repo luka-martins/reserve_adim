@@ -23,14 +23,13 @@ public class TableController {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Nome de mesa Duplicado");
 
         }
-        System.out.println(data);
-
         TableEntity newTableEntity = new TableEntity(data.name(), data.capacity(), TableStatus.AVAILABLE);
         System.out.println(newTableEntity.getCapacity());
         this.repository.save(newTableEntity);
 
         return ResponseEntity.ok().build();
     }
+
 
 
 }
