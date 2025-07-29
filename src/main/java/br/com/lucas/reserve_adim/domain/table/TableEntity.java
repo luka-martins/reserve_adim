@@ -2,10 +2,7 @@ package br.com.lucas.reserve_adim.domain.table;
 
 import br.com.lucas.reserve_adim.domain.reservation.Reservation;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ import java.util.List;
 @jakarta.persistence.Table(name = "tables")
 @Entity(name = "tables")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
